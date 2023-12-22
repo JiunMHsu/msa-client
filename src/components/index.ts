@@ -1,11 +1,13 @@
-import Button from './Button/Button';
-import Card from './Card/Card';
-import Modal from './Modal/Modal';
-import Sidebar from './Sidebar/Sidebar';
+import Button from './ui/Button/Button';
+import Card from './ui/Card/Card';
+import Modal from './ui/Modal/Modal';
 
-import cardStyle from './Card/styles/Card.module.scss';
-import compactCardStyle from './Card/styles/CardCompact.module.scss';
+import SideBar from './layout/SideBar/SideBar';
+import TopBar from './layout/TopBar/TopBar';
 
-export { Button, Card, Modal, Sidebar };
+import cardStyle from './ui/Card/styles/Card.module.scss';
+import compactCardStyle from './ui/Card/styles/CardCompact.module.scss';
+
+export { Button, Card, Modal, SideBar, TopBar };
 
 export { cardStyle, compactCardStyle };

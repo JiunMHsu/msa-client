@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import Button from '../Button/Button';
-import styles from './Sidebar.module.scss';
 import { Link } from 'react-router-dom';
 
-const Sidebar = () => {
+import { Button } from '../..';
+
+import styles from './Sidebar.module.scss';
+
+const SideBar = () => {
   const [menuLayout, setMenuLayout] = useState(true);
 
   const menuOptions = [
@@ -48,4 +50,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;

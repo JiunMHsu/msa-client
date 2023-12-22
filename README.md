@@ -6,7 +6,7 @@ Este repo es el cliente de una aplicación de streaming de musica, concretamente
 
 ## TODO
 
-* [ ] Implementar custom hook para controlar la peticion y carga, para así poder abortar cuando sea necesario.
+* [X] Implementar custom hook para controlar la peticion y carga, para así poder abortar cuando sea necesario. (Esta copiado)
 * [ ] Implmentar estilos para el layout principal.
 * [ ] Revisar estilos (por el momento sólo Card está un poco más complejo).
 * [ ] El tema de Card: Fixear strings largos, ajustar spacing de los textos.

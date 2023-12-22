@@ -1,9 +1,10 @@
 import axios from 'axios';
 
+import { AxiosCall } from '../models';
 import { EndpointAlbum } from '../models';
 import { loadAbort } from '../utilities';
 
-export const fetchAlbum = (albumId: number) => {
+export function fetchAlbum(albumId: number): AxiosCall<EndpointAlbum> {
   const controller = loadAbort();
 
   return {
@@ -15,9 +16,11 @@ export const fetchAlbum = (albumId: number) => {
     ),
     controller: controller,
   };
-};
+}
 
-export const fetchAlbumList = (albumIdList: Array<number>) => {
+export function fetchAlbumList(
+  albumIdList: Array<number>,
+): AxiosCall<EndpointAlbum[]> {
   const controller = loadAbort();
 
   let stringifiedList = '';
@@ -36,4 +39,4 @@ export const fetchAlbumList = (albumIdList: Array<number>) => {
     }),
     controller: controller,
   };
-};
+}

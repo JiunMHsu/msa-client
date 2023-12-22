@@ -24,9 +24,3 @@ export interface EndpointAlbum extends ResourceBase {
   image: string;
   episode: string[];
 }
-
-export interface Album {
-  cover: string; // image
-  title: string; // name
-  artist: string[]; // gender
-}

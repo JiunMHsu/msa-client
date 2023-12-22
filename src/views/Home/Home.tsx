@@ -1,26 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Card, cardStyle } from '../../components';
 import { fetchAlbumList } from '../../servicies';
 import { createAdaptedAlbumList } from '../../adapters';
-import { Album } from '../../models';
+import { Album, EndpointAlbum } from '../../models';
+import { useFetchAndLoad } from '../../hooks';
+import { useAsync } from '../../hooks/useAsync';
 
 const Home = () => {
-  // deberia ser obttenido del user
-  // const recentlyPlayed = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const { loading, callEndpoint } = useFetchAndLoad<EndpointAlbum[]>();
+
   const initialAlbums: Album[] = [];
   const [albums, setAlbums] = useState(initialAlbums);
 
-  const fetchAlbums = async () => {
-    // controlar esto con custom hook.
-    // para eso esta el call y el controller
+  const getApiData = async () =>
+    await callEndpoint(fetchAlbumList([23, 54, 22, 7, 1, 2, 8]));
 
-    const { data } = await fetchAlbumList([9, 3, 4, 6, 8]).call;
-    setAlbums(createAdaptedAlbumList(data));
+  const updateState = (fetchedAlbums: EndpointAlbum[]) => {
+    setAlbums(createAdaptedAlbumList(fetchedAlbums));
   };
 
-  useEffect(() => {
-    fetchAlbums();
-  }, []);
+  useAsync<EndpointAlbum[]>(getApiData, updateState, () => {});
 
   const clickHandler = () => {
     console.log('card clicked');

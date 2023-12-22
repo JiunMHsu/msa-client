@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import { Sidebar } from './components';
+import { SideBar, TopBar } from './components';
 import { Explore, Home, Library } from './views';
 
 const App = () => {
   return (
     <>
-      <Sidebar /> {/* side nav */}
-      <div>{/* Top Bar */}</div>
+      <TopBar />
+      <SideBar /> {/* side nav */}
       <Routes>
         {/* Main Section */}
         <Route path="/" element={<Home />} />

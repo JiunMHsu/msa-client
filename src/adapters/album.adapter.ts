@@ -9,6 +9,6 @@ export const createAdaptedAlbum = (fetched: EndpointAlbum) => {
   return formattedAlbum;
 };
 
-export const createAdaptedAlbumList = (fetched: Array<EndpointAlbum>) => {
+export const createAdaptedAlbumList = (fetched: EndpointAlbum[]) => {
   return fetched.map(album => createAdaptedAlbum(album));
 };

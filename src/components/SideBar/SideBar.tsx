@@ -4,7 +4,7 @@ import styles from './Sidebar.module.scss';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
-  const [menuLayout, setMenuLayout] = useState(false);
+  const [menuLayout, setMenuLayout] = useState(true);
 
   const menuOptions = [
     {
@@ -31,13 +31,12 @@ const Sidebar = () => {
 
   return (
     <div>
-      {/* <button className={styles.menuButton}></button> */}
       <Button className={styles.menuButton} onClick={toggleMenu}>
         MENU
       </Button>
       <div className={styles.optionWrapper}>
-        {menuOptions.map(({ icon, text, goTo }) => (
-          <Link className={styles.menuOption} to={goTo}>
+        {menuOptions.map(({ icon, text, goTo }, index) => (
+          <Link className={styles.menuOption} to={goTo} key={index}>
             {icon}
             {menuLayout && text}
           </Link>

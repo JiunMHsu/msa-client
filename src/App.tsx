@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar/Sidebar';
+import { Sidebar } from './components';
 import { Explore, Home, Library } from './views';
 
 const App = () => {

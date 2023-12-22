@@ -29,13 +29,14 @@ const Home = () => {
   return (
     <div>
       Home
-      {albums.map(({ artist, cover, title }) => (
+      {albums.map(({ artist, cover, title }, index) => (
         <Card
           styles={cardStyle}
           imageUrl={cover}
           title={title}
           description={artist[0]}
           clickHandler={clickHandler}
+          key={index}
         />
       ))}
     </div>

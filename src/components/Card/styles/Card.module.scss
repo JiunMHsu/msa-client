@@ -2,7 +2,7 @@
    display: inline-flex;
    margin: .5rem .5rem .5rem .5rem;
    padding: 1rem 1rem 1rem 1rem;
-   background-color: #303030;
+   background-color: #30303040;
    flex-direction: column;
    border-radius: 4%;
    transition-property: all;
@@ -10,7 +10,7 @@
 
    &:hover {
       transition-timing-function: ease-in;
-      background-color: #3f3f3f;
+      background-color: #303030;
    }
 
    &:hover>.imgContainer {
@@ -45,7 +45,7 @@
 .titleBox {
    display: inline;
    color: #d1d1d1;
-   font-size: 1rem;
+   font-size: 1.05rem;
 }
 
 .descriptionBox {

@@ -12,19 +12,13 @@ type CardProps = {
 };
 
 const setStyle = (style: CardStyle | undefined) => {
-  let styleToApply: CSSModuleClasses;
-
   switch (style) {
     case 'compact':
-      styleToApply = compactStyle;
-      break;
+      return compactStyle;
 
     default:
-      styleToApply = defaultStyle;
-      break;
+      return defaultStyle;
   }
-
-  return styleToApply;
 };
 
 const Card = ({
@@ -41,13 +35,13 @@ const Card = ({
     <div className={styles.cardContainer} onClick={clickHandler}>
       {/* nivel contenedor */}
       <div className={styles.imgContainer}>
+        {/* <button>boton de accion</button> */}
         <img src={imageUrl} alt="-" className={styles.image} />
       </div>
       <div className={styles.textContentWrapper}>
         <div className={styles.titleBox}>{title}</div>
         <div className={styles.descriptionBox}>{description}</div>
       </div>
-      {/* <button>boton de accion</button> */}
     </div>
   );
 };

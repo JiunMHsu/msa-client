@@ -1,6 +1,18 @@
+import { useEffect, useRef, useState } from 'react';
+
+import styles from './TextBox.module.scss';
+
+type TextTagProps = {
+  text: string;
+};
+
 type TextBoxProps = {
   text: string;
-  style: string; // no tendria que ser string, ver esto
+  style?: string;
+};
+
+const TextTag = ({ text }: TextTagProps) => {
+  return <>{text}</>;
 };
 
 /**
@@ -14,11 +26,22 @@ type TextBoxProps = {
  * 2. Animación de carga. Al momento de carga, que se muestre un bloque gris y no el texto, de manera que todo el contenido se actualice de forma simultánea
  *
  * ! Ojo que esto no acepta cualquier nodo, sólo texto
- * 
+ *
  * @returns TextBox JSX Element
  */
 const TextBox = ({ text, style }: TextBoxProps) => {
-  return <div className={style}>{text}</div>;
+  // debe aceptar un valor inicial
+  const [boxWidth, setBoxWidth] = useState();
+
+  // cuando el width cambia, triggerear el set
+
+  const boxRef = useRef(null);
+
+  return (
+    <div className={`${styles.textBox} ${style}`} ref={boxRef}>
+      <TextTag text={text} />
+    </div>
+  );
 };
 
 export default TextBox;

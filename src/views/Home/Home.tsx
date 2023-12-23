@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <>
-      <h2>Home</h2>
+      <h2>Good Morning</h2>
       {albums.map(({ artist, cover, title }, index) => (
         <Card
           imageUrl={cover}

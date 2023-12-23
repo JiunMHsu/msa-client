@@ -1,25 +1,42 @@
+import defaultStyle from './styles/Card.module.scss';
+import compactStyle from './styles/CardCompact.module.scss';
+
+type CardStyle = 'default' | 'compact';
+
 type CardProps = {
-  styles: {
-    cardContainer?: string;
-    imgContainer?: string;
-    image?: string;
-    textContentWrapper?: string;
-    titleBox?: string;
-    descriptionBox?: string;
-  };
+  style?: CardStyle;
   imageUrl: string;
   title: string;
   description?: string;
   clickHandler?: () => void;
 };
 
+const setStyle = (style: CardStyle | undefined) => {
+  let styleToApply: CSSModuleClasses;
+
+  switch (style) {
+    case 'compact':
+      styleToApply = compactStyle;
+      break;
+
+    default:
+      styleToApply = defaultStyle;
+      break;
+  }
+
+  return styleToApply;
+};
+
 const Card = ({
-  styles,
+  style,
   imageUrl,
   title,
   description,
   clickHandler,
 }: CardProps) => {
+  // setear el estilo segun el valor style
+  const styles = setStyle(style);
+
   return (
     <div className={styles.cardContainer} onClick={clickHandler}>
       {/* nivel contenedor */}

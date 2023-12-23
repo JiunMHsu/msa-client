@@ -1,1 +1,1 @@
-export * from './album.adapter'
+export * from './album.adapter';

@@ -1,2 +1,1 @@
-
-export * from './useFetchAndLoad'
+export * from './useFetchAndLoad';

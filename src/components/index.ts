@@ -1,13 +1,12 @@
+// UI Components
 import Button from './ui/Button/Button';
 import Card from './ui/Card/Card';
 import Modal from './ui/Modal/Modal';
+import Scrollable from './ui/Scrollable/Scrollable';
 
+// Layout Components
 import SideBar from './layout/SideBar/SideBar';
 import TopBar from './layout/TopBar/TopBar';
+import MainFrame from './layout/MainFrame/MainFrame';
 
-import cardStyle from './ui/Card/styles/Card.module.scss';
-import compactCardStyle from './ui/Card/styles/CardCompact.module.scss';
-
-export { Button, Card, Modal, SideBar, TopBar };
-
-export { cardStyle, compactCardStyle };
+export { Button, Card, Modal, Scrollable, SideBar, TopBar, MainFrame };

@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '../..';
 
+import styles from './TopBar.module.scss';
+
 const TopBar = () => {
   const navigate = useNavigate();
 
@@ -11,7 +13,7 @@ const TopBar = () => {
   };
 
   return (
-    <div className="topbarContainer">
+    <div className={styles.topbarContainer}>
       {/* MENU BUTTON */}
       <Button onClick={toggleMenu}>MENU</Button>
 

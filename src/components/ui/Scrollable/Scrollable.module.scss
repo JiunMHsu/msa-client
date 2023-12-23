@@ -1,0 +1,11 @@
+.scrollable {
+   display: inline;
+   width: auto;
+   height: 80vh;
+   // z-index: 500;
+   overflow: scroll;
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
+}

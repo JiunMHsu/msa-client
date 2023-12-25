@@ -1,0 +1,27 @@
+.rowHeader {
+   display: block;
+   align-items: baseline;
+}
+
+.title {
+   display: inline;
+   margin-left: 3rem;
+}
+
+.accionButton {
+   display: inline;
+   position: relative;
+   font-size: 90%;
+   padding-top: 0.1rem;
+   margin-right: 3rem;
+   float: right;
+
+}
+
+.contentContainer {
+   display: grid;
+   grid-template-rows: 1fr;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+   row-gap: 1rem;
+   column-gap: 1rem;
+}

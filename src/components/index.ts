@@ -9,5 +9,16 @@ import TextBox from './ui/TextBox/TextBox';
 import SideBar from './layout/SideBar/SideBar';
 import TopBar from './layout/TopBar/TopBar';
 import MainFrame from './layout/MainFrame/MainFrame';
+import ContentRow from './layout/ContentRow/ContentRow';
 
-export { Button, Card, Modal, Scrollable, SideBar, TopBar, MainFrame, TextBox };
+export {
+  Button,
+  Card,
+  Modal,
+  Scrollable,
+  SideBar,
+  TopBar,
+  MainFrame,
+  TextBox,
+  ContentRow,
+};

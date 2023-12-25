@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Card } from '../../components';
+import { Card, ContentRow } from '../../components';
 import { fetchAlbumList } from '../../servicies';
 import { createAdaptedAlbumList } from '../../adapters';
 import { Album } from '../../models';
@@ -25,6 +25,7 @@ const Home = () => {
 
   return (
     <>
+      <ContentRow />
       <h2>Good Morning</h2>
       {albums.map(({ artist, cover, title }, index) => (
         <Card

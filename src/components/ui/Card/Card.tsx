@@ -21,6 +21,24 @@ const setStyle = (style: CardStyle | undefined) => {
   }
 };
 
+/**
+ * En cuanto a estilos de la carta, deberian haber:
+ *
+ * * Por defecto:
+ *   Carta foto cuadrada, titulo principal, autores en descripción
+ *   boton de play flotante sobre la img
+ *
+ * * Artista (es el por defecto con modificaciones)
+ *   Carta foto redonda, nombre de artista como titulo principal
+ *   texto "artista" como descripción
+ *
+ * * Compacto (lo mismo que las dos anteriores)
+ *   Varía únicamente en la animación del hover (véase spotify en la sección de librería),
+ *   y en la descripción (va el tipo de album o playlist y el artista o creador)
+ *
+ * * Sencillo
+ *   Layout alargado sin descripción,
+ */
 const Card = ({
   style,
   imageUrl,

@@ -13,7 +13,7 @@ export interface Track {}
 export interface User {
   name: string;
   profilePhoto: string;
-  following: Array<string>;
-  playlists: Array<string>;
-  savedAlbums: Array<string>;
+  following: string[];
+  playlists: string[];
+  savedAlbums: string[];
 }

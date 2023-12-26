@@ -1,0 +1,7 @@
+googlefonts icon
+weight 200
+grade 0
+optical size 24px
+
+material symbols
+rounded

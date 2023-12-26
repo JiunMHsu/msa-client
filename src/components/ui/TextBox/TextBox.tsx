@@ -1,15 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-
+import { useRef, useState } from 'react';
 import styles from './TextBox.module.scss';
 
-type TextTagProps = {
+interface TextTagProps {
   text: string;
-};
+}
 
-type TextBoxProps = {
+interface TextBoxProps {
   text: string;
   style?: string;
-};
+}
 
 const TextTag = ({ text }: TextTagProps) => {
   return <>{text}</>;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { SideBar, TopBar, MainFrame } from './components';
@@ -6,12 +7,14 @@ import { Explore, Home, Library } from './views';
 import styles from './App.module.scss';
 
 const App = () => {
+  const [openMenu, setOpenMenu] = useState(true);
+
   return (
     <>
-      <TopBar />
-
+      <TopBar setMenu={setOpenMenu} />
       <div className={styles.sideBarAndMainFrameWrapper}>
-        <SideBar />
+        <SideBar menuState={openMenu} />
+
         <MainFrame>
           <Routes>
             {/* Main Section */}

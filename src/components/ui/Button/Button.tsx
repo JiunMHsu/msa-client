@@ -1,18 +1,28 @@
 import { ReactNode } from 'react';
+import styles from './Button.module.scss';
 
-type ButtonProps = {
+interface ButtonProps {
   children?: ReactNode;
   className?: string;
   onClick: () => void;
-};
+}
 
 const Button = ({ children, className, onClick }: ButtonProps) => {
+  const clickHandler = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    event.stopPropagation();
+    onClick();
+  };
+
   return (
-    <div>
-      <button className={className} onClick={onClick}>
-        {children}
-      </button>
-    </div>
+    <button
+      type="button"
+      className={`${styles.button} ${className}`}
+      onClick={clickHandler}
+    >
+      {children}
+    </button>
   );
 };
 

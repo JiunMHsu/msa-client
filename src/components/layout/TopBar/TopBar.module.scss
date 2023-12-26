@@ -1,10 +1,47 @@
-div{
-   display: inline;
-}
-h1{
+h1 {
    display: inline;
 }
 
-.topbarContainer{
-   display: block
+.mainLogo {
+   display: inline;
+   padding-bottom: .5rem;
+}
+
+.topBarContainer {
+   display: flex;
+   align-items: center;
+}
+
+@mixin buttonStyle {
+   display: inline;
+   margin: .5rem;
+
+   &:hover>.img {
+      cursor: pointer;
+      border-radius: 2rem;
+      transition-timing-function: ease-in;
+      background-color: #99999970;
+   }
+}
+
+.img {
+   padding: .5rem;
+   height: 2.5rem;
+   border-radius: 1rem;
+   transition-property: all;
+   transition-duration: 250ms;
+}
+
+.menuButton {
+   @include buttonStyle();
+}
+
+.navigateButton {
+   @include buttonStyle();
+}
+
+.userButton {
+   @include buttonStyle();
+   float: inline-end;
+
 }

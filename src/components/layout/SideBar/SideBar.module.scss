@@ -1,0 +1,42 @@
+.menuButton {
+   all: unset;
+
+   &:hover {
+      color: rgba(255, 255, 255, 0.60);
+   }
+}
+
+.optionWrapper {
+   display: flexbox;
+}
+
+.menuOption {
+   text-decoration: none;
+   color: inherit;
+   list-style: none;
+   display: flex;
+   padding: .5rem;
+   margin: .5rem;
+   align-items: center;
+   font-size: large;
+
+   transition-property: all;
+   transition-duration: 250ms;
+
+   &:hover {
+      cursor: pointer;
+      border-radius: .5rem;
+      transition-timing-function: ease-in;
+      background-color: #99999970;
+   }
+}
+
+.textHolder {
+   display: inline;
+   margin: 0 0;
+   padding-left: 1rem;
+}
+
+.img {
+   height: 2.5rem;
+}

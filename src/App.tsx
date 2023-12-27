@@ -32,7 +32,6 @@ const App = () => {
       <div className={styles.sideBarAndMainFrameWrapper}>
         <SideBar menuState={openMenu} />
 
-        {/* ver si extraer los estilos del main frame */}
         <Scrollable style={styles.mainFrame}>
           <Routes>
             {/* Main Section */}

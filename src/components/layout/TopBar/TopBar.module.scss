@@ -1,28 +1,29 @@
 .topBarContainer {
-   display: block;
-   padding-top: .3em;
+   display: flex;
+   align-items: center;
+   // padding-top: .3em;
 }
 
 .mainLogo {
    display: inline-flex;
    width: min-content;
+   align-items: center;
    margin-left: 1rem;
 }
 
 .logoName {
-   display: inline;
+   display: inline-block;
    margin: 0 0 0 0;
 }
 
-
 .navigators {
-   display: block;
+   display: inline-flex;
    width: max-content;
-   float: right;
+   margin-left: auto;
 }
 
 @mixin buttonStyle {
-   display: inline;
+   display: inline-flex;
    margin: .5rem;
 
    &:hover>.icon {
@@ -34,7 +35,7 @@
 }
 
 .icon {
-   padding: .5rem;
+   padding: .5rem .5rem;
    height: 2rem;
    border-radius: .5rem;
    transition-property: all;

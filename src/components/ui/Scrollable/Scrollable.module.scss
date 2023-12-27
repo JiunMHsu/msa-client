@@ -5,6 +5,23 @@
    overflow: scroll;
 
    &::-webkit-scrollbar {
-      display: none;
+      width: .5rem;
+   }
+
+   &::-webkit-scrollbar-track {
+      opacity: 0;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background: #cfcfcf75;
+      border-radius: .2rem;
+      transition: all;
+      transition-duration: 100ms;
+   }
+
+   &::-webkit-scrollbar-thumb:hover {
+      cursor: pointer;
+      background-color: #cfcfcf;
+      transition-timing-function: ease-in;
    }
 }

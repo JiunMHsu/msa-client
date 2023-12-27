@@ -47,9 +47,24 @@
    z-index: 5000;
    top: 55%;
    /* Adjust these values to position the button */
-   left: 65%;
+   left: 70%;
    /* relative to its parent */
    transform: translate(-50%, -50%);
+}
+
+.icon {
+   padding: .5rem;
+   height: 2rem;
+   border-radius: 2rem;
+   background-color: #a0a0a0;
+   transition-property: all;
+   transition-duration: 300ms;
+
+   &:hover {
+      height: 2.1rem;
+      background-color: #dd9a99;
+      transition-timing-function: ease-in;
+   }
 }
 
 .textContentWrapper {

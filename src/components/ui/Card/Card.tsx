@@ -71,7 +71,7 @@ const Card = ({
       {/* nivel contenedor */}
       {playButton && (
         <Button className={styles.playButton} onClick={playButtonHandler}>
-          <img src="play_arrow_FILL0_wght200_GRAD0_opsz24.svg" alt="" />
+          <img src="play_arrow_FILL0_wght200_GRAD0_opsz24.svg" alt="" className={styles.icon}/>
         </Button>
       )}
       <div className={styles.imgContainer}>

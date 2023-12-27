@@ -1,32 +1,50 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { SideBar, TopBar, MainFrame } from './components';
+import { SideBar, TopBar, Scrollable } from './components';
 import { Explore, Home, Library } from './views';
 
 import styles from './App.module.scss';
 
 const App = () => {
+  // const [windowSize, setWindowSize] = useState([
+  //   window.innerWidth,
+  //   window.innerHeight,
+  // ]);
+
+  // useEffect(() => {
+  //   const handleWindowResize = () => {
+  //     setWindowSize([window.innerWidth, window.innerHeight]);
+  //   };
+
+  //   window.addEventListener('resize', handleWindowResize);
+
+  //   return () => {
+  //     window.removeEventListener('resize', handleWindowResize);
+  //   };
+  // }, []);
+
   const [openMenu, setOpenMenu] = useState(true);
 
   return (
-    <>
+    <div className={styles.app}>
       <TopBar setMenu={setOpenMenu} />
       <div className={styles.sideBarAndMainFrameWrapper}>
         <SideBar menuState={openMenu} />
 
-        <MainFrame>
+        {/* ver si extraer los estilos del main frame */}
+        <Scrollable style={styles.mainFrame}>
           <Routes>
             {/* Main Section */}
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/library" element={<Library />} />
           </Routes>
-        </MainFrame>
+        </Scrollable>
       </div>
 
-      <div>{/* Play Bar */}</div>
-    </>
+      {/* <div>Play Bar</div> */}
+    </div>
   );
 };
 

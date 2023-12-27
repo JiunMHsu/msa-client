@@ -1,8 +1,7 @@
 .scrollable {
-   display: inline;
+   display: inline-block;
    width: auto;
-   height: 80vh;
-   // z-index: 500;
+   height: auto;
    overflow: scroll;
 
    &::-webkit-scrollbar {

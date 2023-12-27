@@ -30,7 +30,7 @@ const SideBar = ({ menuState }: SideBarProps) => {
       <div className={styles.optionWrapper}>
         {menuOptions.map(({ icon, text, goTo }, index) => (
           <Link className={styles.menuOption} to={goTo} key={index}>
-            {<img src={icon} className={styles.img} />}
+            {<img src={icon} className={styles.icon} />}
             {menuState && <p className={styles.textHolder}>{text}</p>}
           </Link>
         ))}

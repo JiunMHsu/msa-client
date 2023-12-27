@@ -1,35 +1,44 @@
-h1 {
-   display: inline;
+.topBarContainer {
+   display: block;
+   padding-top: .3em;
 }
 
 .mainLogo {
-   display: inline;
-   padding-bottom: .5rem;
+   display: inline-flex;
+   width: min-content;
+   margin-left: 1rem;
 }
 
-.topBarContainer {
-   display: flex;
-   align-items: center;
+.logoName {
+   display: inline;
+   margin: 0 0 0 0;
+}
+
+
+.navigators {
+   display: block;
+   width: max-content;
+   float: right;
 }
 
 @mixin buttonStyle {
    display: inline;
    margin: .5rem;
 
-   &:hover>.img {
+   &:hover>.icon {
       cursor: pointer;
       border-radius: 2rem;
       transition-timing-function: ease-in;
-      background-color: #99999970;
+      background-color: #3f3f3f9f;
    }
 }
 
-.img {
+.icon {
    padding: .5rem;
-   height: 2.5rem;
-   border-radius: 1rem;
+   height: 2rem;
+   border-radius: .5rem;
    transition-property: all;
-   transition-duration: 250ms;
+   transition-duration: 300ms;
 }
 
 .menuButton {
@@ -42,6 +51,5 @@ h1 {
 
 .userButton {
    @include buttonStyle();
-   float: inline-end;
-
+   padding: 0 2rem 0;
 }

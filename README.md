@@ -7,6 +7,7 @@ Este repo es el cliente de una aplicación de streaming de musica, concretamente
 ## TODO
 
 - [x] Implementar custom hook para controlar la peticion y carga, para así poder abortar cuando sea necesario. (Esta copiado)
+- [ ] Hacer clean up del layuot, descartar contenedores innecesarios.
 - [ ] Habría que refactorizar Card y Playable Card.
 - [ ] Implmentar estilos para el layout principal.
 - [ ] Revisar estilos (por el momento sólo Card está un poco más complejo).

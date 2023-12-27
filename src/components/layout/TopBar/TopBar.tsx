@@ -20,40 +20,42 @@ const TopBar = ({ setMenu }: TopBarProps) => {
         <img
           src="menu_FILL0_wght200_GRAD0_opsz24.svg"
           alt=""
-          className={styles.img}
+          className={styles.icon}
         />
       </Button>
 
       {/* LOGO */}
       <div className={styles.mainLogo}>
-        <h1>LOGO</h1>
+        <img src="" alt="" />
+        <h1 className={styles.logoName}>LOGO</h1>
       </div>
 
       {/* NAVIGATE BUTTONS */}
-      <Button
-        className={styles.navigateButton}
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        <img
-          src="keyboard_arrow_left_FILL0_wght200_GRAD0_opsz24.svg"
-          alt=""
-          className={styles.img}
-        />
-      </Button>
-      <Button
-        className={styles.navigateButton}
-        onClick={() => {
-          navigate(1);
-        }}
-      >
-        <img
-          src="keyboard_arrow_right_FILL0_wght200_GRAD0_opsz24.svg"
-          alt=""
-          className={styles.img}
-        />
-      </Button>
+      <div className={styles.navigators}>
+        <Button
+          className={styles.navigateButton}
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          <img
+            src="keyboard_arrow_left_FILL0_wght200_GRAD0_opsz24.svg"
+            alt=""
+            className={styles.icon}
+          />
+        </Button>
+        <Button
+          className={styles.navigateButton}
+          onClick={() => {
+            navigate(1);
+          }}
+        >
+          <img
+            src="keyboard_arrow_right_FILL0_wght200_GRAD0_opsz24.svg"
+            alt=""
+            className={styles.icon}
+          />
+        </Button>
 
       {/* <Button onClick={() => {}}>SOME OPTION</Button> */}
 
@@ -61,9 +63,10 @@ const TopBar = ({ setMenu }: TopBarProps) => {
         <img
           src="account_circle_FILL1_wght200_GRAD0_opsz24.svg"
           alt=""
-          className={styles.img}
-        />
+          className={styles.icon}
+          />
       </Button>
+          </div>
     </div>
   );
 };

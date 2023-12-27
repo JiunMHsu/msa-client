@@ -1,13 +1,12 @@
-.menuButton {
-   all: unset;
-
-   &:hover {
-      color: rgba(255, 255, 255, 0.60);
-   }
+.sideBarContainer{
+   display: flex;
+   flex-direction: row;
 }
+
 
 .optionWrapper {
    display: flexbox;
+   height: max-content;
 }
 
 .menuOption {
@@ -26,7 +25,7 @@
       cursor: pointer;
       border-radius: .5rem;
       transition-timing-function: ease-in;
-      background-color: #99999970;
+      background-color: #3f3f3f9f;
    }
 }
 
@@ -34,10 +33,12 @@
    display: inline;
    margin: 0 0;
    padding-left: 1rem;
-   font-weight: 700;
+   padding-right: .5rem;
+
+   font-weight: 500;
    font-size: large;
 }
 
-.img {
-   height: 2.5rem;
+.icon {
+   height: 2rem;
 }

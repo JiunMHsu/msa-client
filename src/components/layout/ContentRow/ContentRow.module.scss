@@ -1,11 +1,16 @@
+.rowWrapper {
+   display: block;
+   overflow: hidden;
+}
+
 .rowHeader {
    display: block;
    align-items: baseline;
 }
 
 .title {
+   color: #1f1f1f;
    display: inline;
-   margin-left: 3rem;
 }
 
 .accionButton {
@@ -18,9 +23,6 @@
 }
 
 .contentContainer {
-   display: grid;
-   grid-template-rows: 1fr;
-   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-   row-gap: 1rem;
-   column-gap: 1rem;
+   display: flex;
+
 }

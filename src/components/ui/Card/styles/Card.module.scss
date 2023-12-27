@@ -24,7 +24,7 @@
 }
 
 .imgContainer {
-   display: block;
+   display: inline-block;
    position: relative;
    width: 10rem;
    height: 10rem;
@@ -47,7 +47,7 @@
    z-index: 5000;
    top: 55%;
    /* Adjust these values to position the button */
-   left: 70%;
+   left: 75%;
    /* relative to its parent */
    transform: translate(-50%, -50%);
 }

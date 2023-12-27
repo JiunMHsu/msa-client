@@ -57,16 +57,16 @@ const TopBar = ({ setMenu }: TopBarProps) => {
           />
         </Button>
 
-      {/* <Button onClick={() => {}}>SOME OPTION</Button> */}
+        {/* <Button onClick={() => {}}>SOME OPTION</Button> */}
 
-      <Button className={styles.userButton} onClick={() => {}}>
-        <img
-          src="account_circle_FILL1_wght200_GRAD0_opsz24.svg"
-          alt=""
-          className={styles.icon}
+        <Button className={styles.userButton} onClick={() => {}}>
+          <img
+            src="account_circle_FILL1_wght200_GRAD0_opsz24.svg"
+            alt=""
+            className={styles.icon}
           />
-      </Button>
-          </div>
+        </Button>
+      </div>
     </div>
   );
 };

@@ -32,7 +32,7 @@ const Home = () => {
           imageUrl={cover}
           title={title}
           description={artist[0]}
-          clickHandler={clickHandler}
+          onClick={clickHandler}
           key={index}
         />
       ))}

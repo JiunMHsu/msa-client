@@ -32,7 +32,7 @@ const App = () => {
       <div className={styles.sideBarAndMainFrameWrapper}>
         <SideBar menuState={openMenu} />
 
-        <Scrollable style={styles.mainFrame}>
+        <Scrollable className={styles.mainFrame}>
           <Routes>
             {/* Main Section */}
             <Route path="/" element={<Home />} />

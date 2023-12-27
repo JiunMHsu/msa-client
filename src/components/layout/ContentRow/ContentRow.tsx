@@ -9,11 +9,14 @@ const ContentRow = () => {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
-    <>
+    <div className={styles.rowWrapper}>
       <div className={styles.rowHeader}>
         <h2 className={styles.title}>Recent Play</h2>
-        <a className={styles.accionButton} href='/library'>Show All</a>
+        <a className={styles.accionButton} href="/library">
+          Show All
+        </a>
       </div>
+
       <div className={styles.contentContainer}>
         {array.map((number, index) => (
           <Card
@@ -25,7 +28,7 @@ const ContentRow = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,20 +1,22 @@
 import { useState } from 'react';
 import { Button } from '../..';
+
 import defaultStyle from './styles/Card.module.scss';
 import compactStyle from './styles/CardCompact.module.scss';
 
-type CardStyle = 'default' | 'compact';
+type CardLayout = 'default' | 'compact';
 
 interface CardProps {
-  style?: CardStyle;
   imageUrl: string;
   title: string;
   description?: string;
-  clickHandler?: () => void;
+  layout?: CardLayout;
+  fold?: boolean;
+  onClick?: () => void;
 }
 
-const setStyle = (style: CardStyle | undefined) => {
-  switch (style) {
+const setStyle = (layout: CardLayout | undefined) => {
+  switch (layout) {
     case 'compact':
       return compactStyle;
 
@@ -24,7 +26,7 @@ const setStyle = (style: CardStyle | undefined) => {
 };
 
 /**
- * En cuanto a estilos de la carta, deberian haber:
+ * En cuanto a layout de la carta, deberian haber:
  *
  * * Por defecto:
  *   Carta foto cuadrada, titulo principal, autores en descripción
@@ -42,14 +44,15 @@ const setStyle = (style: CardStyle | undefined) => {
  *   Layout alargado sin descripción,
  */
 const Card = ({
-  style,
   imageUrl,
   title,
   description,
-  clickHandler,
+  layout,
+  fold,
+  onClick,
 }: CardProps) => {
   // setear el estilo segun el valor style
-  const styles = setStyle(style);
+  const styles = setStyle(layout);
   const [playButton, setPlayButton] = useState(false);
 
   const playButtonHandler = () => {
@@ -60,7 +63,7 @@ const Card = ({
   return (
     <div
       className={styles.cardContainer}
-      onClick={clickHandler}
+      onClick={onClick}
       onMouseEnter={() => {
         setPlayButton(true);
       }}
@@ -71,18 +74,26 @@ const Card = ({
       {/* nivel contenedor */}
       {playButton && (
         <Button className={styles.playButton} onClick={playButtonHandler}>
-          <img src="play_arrow_FILL0_wght200_GRAD0_opsz24.svg" alt="" className={styles.icon}/>
+          <img
+            src="play_arrow_FILL0_wght200_GRAD0_opsz24.svg"
+            alt=""
+            className={styles.icon}
+          />
         </Button>
       )}
+
       <div className={styles.imgContainer}>
         {/* imagen */}
         <img src={imageUrl} alt="" className={styles.image}></img>
       </div>
-      <div className={styles.textContentWrapper}>
-        {/* nivel texto */}
-        <div className={styles.titleBox}>{title}</div>
-        <div className={styles.descriptionBox}>{description}</div>
-      </div>
+
+      {!fold && (
+        <div className={styles.textContentWrapper}>
+          {/* nivel texto */}
+          <div className={styles.titleBox}>{title}</div>
+          <div className={styles.descriptionBox}>{description}</div>
+        </div>
+      )}
     </div>
   );
 };

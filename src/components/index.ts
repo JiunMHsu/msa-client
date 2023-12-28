@@ -1,5 +1,6 @@
 // UI Components
 import Button from './ui/Button/Button';
+import PlayButton from './ui/Button/PlayButton';
 import Card from './ui/Card/Card';
 import Modal from './ui/Modal/Modal';
 import Scrollable from './ui/Scrollable/Scrollable';
@@ -12,6 +13,7 @@ import ContentRow from './layout/ContentRow/ContentRow';
 
 export {
   Button,
+  PlayButton,
   Card,
   Modal,
   Scrollable,

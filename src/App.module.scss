@@ -11,6 +11,7 @@
 }
 
 .mainFrame {
+   // background-color: #f7cac9;
    background-image: linear-gradient(#f7cac9, #f7cac9bb, #5c4d4dbb, #0f0f0fbb);
    padding: 1rem 1rem 0;
    border-radius: 1rem;
@@ -19,4 +20,16 @@
    &::-webkit-scrollbar {
       display: none;
    }
+}
+
+.rightSideBlock {
+   display: inline-block;
+   width: 1.5rem;
+}
+
+.playBar {
+   display: flex;
+   height:min-content;
+   align-items: center;
+   justify-content: center;
 }

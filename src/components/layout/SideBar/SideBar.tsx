@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-// import { Button } from '. =./..';
 import { Card, Scrollable } from '../..';
 import { useEffect, useState } from 'react';
 import { createAdaptedAlbumList } from '../../../adapters';
@@ -9,7 +8,7 @@ import { Album } from '../../../models';
 import styles from './SideBar.module.scss';
 
 interface SideBarProps {
-  menuState: boolean;
+  openMenu: boolean;
 }
 
 const menuOptions = [
@@ -30,10 +29,11 @@ const menuOptions = [
   },
 ];
 
-const SideBar = ({ menuState }: SideBarProps) => {
+const SideBar = ({ openMenu }: SideBarProps) => {
   const initialAlbums: Album[] = [];
   const [albums, setAlbums] = useState(initialAlbums);
 
+  //----------------------------------------------------------------------------------
   const fetchAlbums = async () => {
     const { data } = await fetchAlbumList([
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -44,6 +44,7 @@ const SideBar = ({ menuState }: SideBarProps) => {
   useEffect(() => {
     fetchAlbums();
   }, []);
+  //----------------------------------------------------------------------------------
 
   return (
     <div className={styles.sideBarContainer}>
@@ -51,7 +52,7 @@ const SideBar = ({ menuState }: SideBarProps) => {
         {menuOptions.map(({ icon, text, goTo }, index) => (
           <Link className={styles.menuOption} to={goTo} key={index}>
             {<img src={icon} className={styles.icon} />}
-            {menuState && <p className={styles.textHolder}>{text}</p>}
+            {openMenu && <p className={styles.textHolder}>{text}</p>}
           </Link>
         ))}
       </div>
@@ -63,14 +64,14 @@ const SideBar = ({ menuState }: SideBarProps) => {
             title={title}
             description={artist[0]}
             layout="compact"
-            fold={!menuState}
+            fold={!openMenu}
             onClick={() => {}}
             key={index}
           />
         ))}
       </Scrollable>
 
-      <div className={styles.resizer}></div>
+      {/* <div className={styles.resizer}></div> */}
     </div>
   );
 };

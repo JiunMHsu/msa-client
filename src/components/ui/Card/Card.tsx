@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '../..';
+import { PlayButton } from '../..';
 
 import defaultStyle from './styles/Card.module.scss';
 import compactStyle from './styles/CardCompact.module.scss';
@@ -53,7 +53,7 @@ const Card = ({
 }: CardProps) => {
   // setear el estilo segun el valor style
   const styles = setStyle(layout);
-  const [playButton, setPlayButton] = useState(false);
+  const [showButton, setShowButton] = useState(false);
 
   const playButtonHandler = () => {
     // deberia hacer lanzar el evento de encolar el tema, reproducir ...
@@ -65,22 +65,19 @@ const Card = ({
       className={styles.cardContainer}
       onClick={onClick}
       onMouseEnter={() => {
-        setPlayButton(true);
+        setShowButton(true);
       }}
       onMouseLeave={() => {
-        setPlayButton(false);
+        setShowButton(false);
       }}
     >
       {/* nivel contenedor */}
-      {playButton && (
-        <Button className={styles.playButton} onClick={playButtonHandler}>
-          <img
-            src="play_arrow_FILL0_wght200_GRAD0_opsz24.svg"
-            alt=""
-            className={styles.icon}
-          />
-        </Button>
-      )}
+      <PlayButton
+        show={showButton}
+        onClick={playButtonHandler}
+        buttonStyle={styles.playButton}
+        iconStyle={styles.icon}
+      />
 
       <div className={styles.imgContainer}>
         {/* imagen */}

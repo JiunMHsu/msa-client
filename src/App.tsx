@@ -30,7 +30,7 @@ const App = () => {
     <div className={styles.app}>
       <TopBar setMenu={setOpenMenu} />
       <div className={styles.sideBarAndMainFrameWrapper}>
-        <SideBar menuState={openMenu} />
+        <SideBar openMenu={openMenu} />
 
         <Scrollable className={styles.mainFrame}>
           <Routes>
@@ -40,9 +40,11 @@ const App = () => {
             <Route path="/library" element={<Library />} />
           </Routes>
         </Scrollable>
+
+        <div className={styles.rightSideBlock}></div>
       </div>
 
-      {/* <div>Play Bar</div> */}
+      <div className={styles.playBar}>play bar</div>
     </div>
   );
 };

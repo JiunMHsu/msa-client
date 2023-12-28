@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../..';
 import styles from './TopBar.module.scss';
 
@@ -25,15 +25,14 @@ const TopBar = ({ setMenu }: TopBarProps) => {
       </Button>
 
       {/* LOGO */}
-      <div className={styles.mainLogo}>
+      <Link className={styles.mainLogo} to="/">
         <img src="" alt="" />
         <h1 className={styles.logoName}>LOGO</h1>
-      </div>
+      </Link>
 
       {/* NAVIGATE BUTTONS */}
       <div className={styles.navigators}>
         <Button
-          className={styles.navigateButton}
           onClick={() => {
             navigate(-1);
           }}
@@ -45,7 +44,6 @@ const TopBar = ({ setMenu }: TopBarProps) => {
           />
         </Button>
         <Button
-          className={styles.navigateButton}
           onClick={() => {
             navigate(1);
           }}
@@ -57,7 +55,9 @@ const TopBar = ({ setMenu }: TopBarProps) => {
           />
         </Button>
 
-        {/* <Button onClick={() => {}}>SOME OPTION</Button> */}
+        <Link className={styles.artistAccess} to="/user/artist/dashboard">
+          <p>Artist</p>
+        </Link>
 
         <Button className={styles.userButton} onClick={() => {}}>
           <img

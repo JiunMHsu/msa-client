@@ -1,20 +1,48 @@
+@mixin buttonHoverEffect {
+   cursor: pointer;
+   transition-timing-function: ease-in;
+   background-color: #3f3f3f9f;
+}
+
+@mixin buttonStyle {
+   display: inline-flex;
+   margin: .5rem 1.5rem;
+   padding: 0;
+   align-items: center;
+   border-radius: 2rem;
+
+   transition-property: all;
+   transition-duration: 300ms;
+
+   &:hover {
+      @include buttonHoverEffect();
+   }
+
+}
+
 .topBarContainer {
    display: flex;
    align-items: center;
-   margin-left: 1rem;
-   // padding-top: .3em;
+   margin: .2rem 0;
+
+   Button {
+      @include buttonStyle();
+   }
+
 }
 
 .mainLogo {
    display: inline-flex;
    width: min-content;
+   text-decoration: none;
+   color: #cfcfcf;
    align-items: center;
    margin-left: 1rem;
-}
 
-.logoName {
-   display: inline-block;
-   margin: 0 0 0 0;
+   .logoName {
+      display: inline-block;
+      margin: 0 0 0 0;
+   }
 }
 
 .navigators {
@@ -23,35 +51,35 @@
    margin-left: auto;
 }
 
-@mixin buttonStyle {
-   display: inline-flex;
-   margin: .5rem;
-
-   &:hover>.icon {
-      cursor: pointer;
-      border-radius: 2rem;
-      transition-timing-function: ease-in;
-      background-color: #3f3f3f9f;
-   }
-}
-
 .icon {
-   padding: .5rem .5rem;
+   // padding: .5rem .5rem;
+   margin: .25rem;
    height: 2.5rem;
    border-radius: .5rem;
-   transition-property: all;
-   transition-duration: 300ms;
+
 }
 
 .menuButton {
-   @include buttonStyle();
+   margin-left: 1rem;
+   margin-right: 1rem;
+
 }
 
-.navigateButton {
-   @include buttonStyle();
+.artistAccess {
+   display: inline-flex;
+   text-decoration: none;
+   color: #cfcfcf;
+   align-items: center;
+
+   p {
+      @include buttonStyle();
+      height: min-content;
+      margin: 0 1.5rem;
+      padding: .2rem 1rem .2rem;
+      border: .1rem solid;
+   }
 }
 
 .userButton {
-   @include buttonStyle();
-   padding: 0 2rem 0;
+   margin: 0 2rem 0 .5rem;
 }

@@ -1,25 +1,21 @@
 .sideBarContainer {
    display: flex;
    flex-direction: column;
-   padding: 0 .5rem 0;
-   // border: #424242;
-   // border-right-width:.1rem;
-   // border-right-style:solid;
+   margin: 0 .5rem 0;
 }
 
-
 .optionWrapper {
-   display: flexbox;
+   display: flex;
    height: max-content;
+   flex-direction: column;
 }
 
 .menuOption {
    text-decoration: none;
    color: inherit;
-   list-style: none;
    display: flex;
    padding: .5rem;
-   margin: .5rem 1rem .5rem;
+   margin: 0 .5rem 0;
    align-items: center;
 
    transition-property: all;
@@ -34,17 +30,15 @@
 }
 
 .textHolder {
-   display: inline;
-   margin: 0 0;
-   padding-left: 1rem;
-   padding-right: .5rem;
-
+   display: inline-block;
+   margin: 0 .5rem;
    font-weight: 500;
    font-size: large;
 }
 
 .icon {
    height: 2.5rem;
+   margin: .25rem;
 }
 
 .scrollable {

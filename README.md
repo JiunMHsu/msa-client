@@ -21,3 +21,19 @@ Este repo es el cliente de una aplicación de streaming de musica, concretamente
 - [ ] Configurar las rutas (ver si hace falta eso de public y private route).
 - [ ] Lazy loading? (ni idea como es esto todavía).
 - [ ] Implementar contenido (o estilos) por defecto y aminaciones de carga.
+
+## Routes
+
+`/`
+
+`/explore`
+
+`/library`
+
+`/album/:id`
+
+`/playlist/:id`
+
+`/user`
+
+`/artist`

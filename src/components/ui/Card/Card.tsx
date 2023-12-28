@@ -10,6 +10,7 @@ interface CardProps {
   imageUrl: string;
   title: string;
   description?: string;
+  isArtist?: boolean;
   layout?: CardLayout;
   fold?: boolean;
   onClick?: () => void;
@@ -32,10 +33,6 @@ const setStyle = (layout: CardLayout | undefined) => {
  *   Carta foto cuadrada, titulo principal, autores en descripción
  *   boton de play flotante sobre la img
  *
- * * Artista (es el por defecto con modificaciones)
- *   Carta foto redonda, nombre de artista como titulo principal
- *   texto "artista" como descripción
- *
  * * Compacto (lo mismo que las dos anteriores)
  *   Varía únicamente en la animación del hover (véase spotify en la sección de librería),
  *   y en la descripción (va el tipo de album o playlist y el artista o creador)
@@ -47,6 +44,7 @@ const Card = ({
   imageUrl,
   title,
   description,
+  isArtist = false,
   layout,
   fold,
   onClick,
@@ -73,13 +71,17 @@ const Card = ({
     >
       {/* nivel contenedor */}
       <PlayButton
-        show={showButton}
+        // condicion: el mostrado es true y que no este doblado
+        show={showButton && !fold}
         onClick={playButtonHandler}
         buttonStyle={styles.playButton}
         iconStyle={styles.icon}
       />
 
-      <div className={styles.imgContainer}>
+      <div
+        className={styles.imgContainer}
+        style={isArtist ? { borderRadius: '5rem' } : {}}
+      >
         {/* imagen */}
         <img src={imageUrl} alt="" className={styles.image}></img>
       </div>

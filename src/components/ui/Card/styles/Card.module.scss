@@ -6,14 +6,14 @@
    padding: 1rem 1rem 1rem 1rem;
    background-color: #30303040;
    flex-direction: column;
-   border-radius: .5rem;
+   border-radius: .7rem;
    transition-property: all;
    transition-duration: 250ms;
 
    &:hover {
       cursor: pointer;
       transition-timing-function: ease-in;
-      background-color: #3f3f3f9f;
+      background-color: #30303080;
    }
 
    &:hover>.imgContainer {
@@ -41,14 +41,10 @@
 
 .playButton {
    display: inline;
-   /* Initially hide the play button */
    position: absolute;
-   /* Position the button absolutely */
    z-index: 5000;
    top: 55%;
-   /* Adjust these values to position the button */
    left: 75%;
-   /* relative to its parent */
    transform: translate(-50%, -50%);
 }
 
@@ -81,7 +77,6 @@
    display: inline-block;
    width: inherit;
    height: 1.5rem;
-   // font-size: 1.1rem;
    color: #d1d1d1;
    overflow: hidden;
 }

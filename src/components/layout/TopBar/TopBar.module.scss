@@ -17,7 +17,6 @@
    &:hover {
       @include buttonHoverEffect();
    }
-
 }
 
 .topBarContainer {
@@ -28,7 +27,6 @@
    Button {
       @include buttonStyle();
    }
-
 }
 
 .mainLogo {
@@ -52,33 +50,30 @@
 }
 
 .icon {
-   // padding: .5rem .5rem;
    margin: .25rem;
    height: 2.5rem;
    border-radius: .5rem;
-
 }
 
 .menuButton {
    margin-left: 1rem;
    margin-right: 1rem;
-
 }
 
-.artistAccess {
-   display: inline-flex;
-   text-decoration: none;
-   color: #cfcfcf;
-   align-items: center;
+// .artistAccess {
+//    display: inline-flex;
+//    text-decoration: none;
+//    color: #cfcfcf;
+//    align-items: center;
 
-   p {
-      @include buttonStyle();
-      height: min-content;
-      margin: 0 1.5rem;
-      padding: .2rem 1rem .2rem;
-      border: .1rem solid;
-   }
-}
+//    p {
+//       @include buttonStyle();
+//       height: min-content;
+//       margin: 0 1.5rem;
+//       padding: .2rem 1rem .2rem;
+//       border: .1rem solid;
+//    }
+// }
 
 .userButton {
    margin: 0 2rem 0 .5rem;

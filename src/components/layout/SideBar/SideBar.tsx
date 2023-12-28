@@ -57,6 +57,8 @@ const SideBar = ({ openMenu }: SideBarProps) => {
         ))}
       </div>
 
+      <div className={styles.divider} />
+
       <Scrollable className={styles.scrollable}>
         {albums.map(({ artist, cover, title }, index) => (
           <Card

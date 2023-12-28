@@ -55,9 +55,9 @@ const TopBar = ({ setMenu }: TopBarProps) => {
           />
         </Button>
 
-        <Link className={styles.artistAccess} to="/user/artist/dashboard">
+        {/* <Link className={styles.artistAccess} to="/user/artist/dashboard">
           <p>Artist</p>
-        </Link>
+        </Link> */}
 
         <Button className={styles.userButton} onClick={() => {}}>
           <img

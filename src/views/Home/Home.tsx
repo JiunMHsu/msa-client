@@ -32,6 +32,7 @@ const Home = () => {
           imageUrl={cover}
           title={title}
           description={artist[0]}
+          isArtist={artist[0] === 'Male'}
           onClick={clickHandler}
           key={index}
         />

@@ -44,7 +44,7 @@ const App = () => {
         <div className={styles.rightSideBlock}></div>
       </div>
 
-      <div className={styles.playBar}>play bar</div>
+      {/* <div className={styles.playBar}>play bar</div> */}
     </div>
   );
 };

@@ -2,10 +2,11 @@ import { Card } from '../..';
 import styles from './ContentRow.module.scss';
 
 /**
- * El Content Row recide un array de elementos a
+ * El Content Row recibe un array de elementos a
  *
  */
 const ContentRow = () => {
+  //
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (

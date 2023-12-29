@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../..';
+
 import styles from './TopBar.module.scss';
 
 interface TopBarProps {
@@ -18,7 +19,7 @@ const TopBar = ({ setMenu }: TopBarProps) => {
       {/* MENU BUTTON */}
       <Button className={styles.menuButton} onClick={toggleMenu}>
         <img
-          src="menu_FILL0_wght200_GRAD0_opsz24.svg"
+          src="icons/menu_FILL0_wght200_GRAD0_opsz24.svg"
           alt=""
           className={styles.icon}
         />
@@ -38,7 +39,7 @@ const TopBar = ({ setMenu }: TopBarProps) => {
           }}
         >
           <img
-            src="keyboard_arrow_left_FILL0_wght200_GRAD0_opsz24.svg"
+            src="icons/keyboard_arrow_left_FILL0_wght200_GRAD0_opsz24.svg"
             alt=""
             className={styles.icon}
           />
@@ -49,7 +50,7 @@ const TopBar = ({ setMenu }: TopBarProps) => {
           }}
         >
           <img
-            src="keyboard_arrow_right_FILL0_wght200_GRAD0_opsz24.svg"
+            src="icons/keyboard_arrow_right_FILL0_wght200_GRAD0_opsz24.svg"
             alt=""
             className={styles.icon}
           />
@@ -58,15 +59,15 @@ const TopBar = ({ setMenu }: TopBarProps) => {
         {/* <Link className={styles.artistAccess} to="/user/artist/dashboard">
           <p>Artist</p>
         </Link> */}
-
-        <Button className={styles.userButton} onClick={() => {}}>
-          <img
-            src="account_circle_FILL1_wght200_GRAD0_opsz24.svg"
-            alt=""
-            className={styles.icon}
-          />
-        </Button>
       </div>
+
+      <Button className={styles.userButton} onClick={() => {}}>
+        <img
+          src="icons/account_circle_FILL1_wght200_GRAD0_opsz24.svg"
+          alt=""
+          className={styles.icon}
+        />
+      </Button>
     </div>
   );
 };

@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Card, ContentRow } from '../../components';
-import { fetchAlbumList } from '../../servicies';
+
+import { ContentRow, Card, NewCard } from '../../components';
 import { createAdaptedAlbumList } from '../../adapters';
+import { fetchAlbumList } from '../../servicies';
 import { Album } from '../../models';
 
+import styles from './Home.module.scss';
+
 const Home = () => {
-  const initialAlbums: Album[] = [];
-  const [albums, setAlbums] = useState(initialAlbums);
+  const [albums, setAlbums] = useState<Album[]>([]);
 
   const fetchAlbums = async () => {
     const { data } = await fetchAlbumList([
@@ -19,25 +21,27 @@ const Home = () => {
     fetchAlbums();
   }, []);
 
-  const clickHandler = () => {
-    console.log('card clicked');
-  };
-
   return (
-    <>
-      <ContentRow />
+    <div className={styles.home}>
       <h2>Good Morning</h2>
-      {albums.map(({ artist, cover, title }, index) => (
-        <Card
-          imageUrl={cover}
-          title={title}
-          description={artist[0]}
-          isArtist={artist[0] === 'Male'}
-          onClick={clickHandler}
+      <NewCard
+        itemUrl={'/library'}
+        imageUrl={'album-cover/iu-lilac.jpg'}
+        mainTitle={`IU 5th Album 'LILAC'`}
+        description={'IU'}
+      />
+      <ContentRow />
+      {albums.map(({ albumId, title, coverArt, artists }, index) => (
+        <NewCard
+          itemUrl={`/${albumId}`}
+          imageUrl={coverArt}
+          mainTitle={title}
+          description={artists[0]}
+          isArtist={artists[0] === 'Female'}
           key={index}
         />
       ))}
-    </>
+    </div>
   );
 };
 

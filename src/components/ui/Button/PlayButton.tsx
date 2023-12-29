@@ -22,7 +22,7 @@ const PlayButton = ({
           onClick={onClick}
         >
           <img
-            src="play_arrow_FILL0_wght200_GRAD0_opsz24.svg"
+            src="icons/play_arrow_FILL0_wght200_GRAD0_opsz24.svg"
             alt=""
             className={`${styles.icon} ${iconStyle}`}
           />

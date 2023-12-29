@@ -22,59 +22,46 @@
 .topBarContainer {
    display: flex;
    align-items: center;
-   margin: .2rem 0;
+   margin: .2rem .5rem;
 
    Button {
       @include buttonStyle();
    }
-}
 
-.mainLogo {
-   display: inline-flex;
-   width: min-content;
-   text-decoration: none;
-   color: #cfcfcf;
-   align-items: center;
-   margin-left: 1rem;
-
-   .logoName {
-      display: inline-block;
-      margin: 0 0 0 0;
+   .icon {
+      margin: .5rem;
+      height: 2rem;
+      border-radius: .5rem;
    }
-}
 
-.navigators {
-   display: inline-flex;
-   width: max-content;
-   margin-left: auto;
-}
 
-.icon {
-   margin: .25rem;
-   height: 2.5rem;
-   border-radius: .5rem;
-}
+   .menuButton {
+      margin-left: 1rem;
+      margin-right: 1rem;
+   }
 
-.menuButton {
-   margin-left: 1rem;
-   margin-right: 1rem;
-}
+   .mainLogo {
+      display: inline-flex;
+      width: min-content;
+      text-decoration: none;
+      color: #cfcfcf;
+      align-items: center;
+      margin-left: 1rem;
 
-// .artistAccess {
-//    display: inline-flex;
-//    text-decoration: none;
-//    color: #cfcfcf;
-//    align-items: center;
+      .logoName {
+         display: inline-block;
+         margin: 0 0 0 0;
+      }
+   }
 
-//    p {
-//       @include buttonStyle();
-//       height: min-content;
-//       margin: 0 1.5rem;
-//       padding: .2rem 1rem .2rem;
-//       border: .1rem solid;
-//    }
-// }
+   .navigators {
+      display: inline-flex;
+      width: max-content;
+      margin-left: auto;
+   }
 
-.userButton {
-   margin: 0 2rem 0 .5rem;
+   .userButton {
+      margin: 0 2rem 0 .5rem;
+   }
+
 }

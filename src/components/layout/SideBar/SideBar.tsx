@@ -51,7 +51,7 @@ const SideBar = ({ openMenu }: SideBarProps) => {
       <div className={styles.optionWrapper}>
         {menuOptions.map(({ icon, text, goTo }, index) => (
           <Link className={styles.menuOption} to={goTo} key={index}>
-            {<img src={icon} className={styles.icon} />}
+            {<img src={`icons/${icon}`} className={styles.icon} />}
             {openMenu && <p className={styles.textHolder}>{text}</p>}
           </Link>
         ))}
@@ -60,11 +60,11 @@ const SideBar = ({ openMenu }: SideBarProps) => {
       <div className={styles.divider} />
 
       <Scrollable className={styles.scrollable}>
-        {albums.map(({ artist, cover, title }, index) => (
+        {albums.map(({ title, coverArt, artists }, index) => (
           <Card
-            imageUrl={cover}
+            imageUrl={coverArt}
             title={title}
-            description={artist[0]}
+            description={artists[0]}
             layout="compact"
             fold={!openMenu}
             onClick={() => {}}

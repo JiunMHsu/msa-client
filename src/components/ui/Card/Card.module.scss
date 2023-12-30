@@ -1,0 +1,209 @@
+.cardContainer {
+   font-size: 1rem; // capaz inherit para q responda al bloque contenedor de las cartas
+   display: inline-block;
+   position: relative;
+   width: 12em;
+   height: 17em;
+   margin: .25em;
+   border-radius: .7em;
+   overflow: hidden;
+
+   &:hover>.clickable {
+      cursor: pointer;
+      transition-timing-function: ease-in;
+      background-color: #30303080;
+
+      .imgContainer {
+         transition-timing-function: ease-in;
+         box-shadow: 0em 0em .7em 0em #222222;
+      }
+   }
+
+   // @media (min-width: 1360px) and (max-width: 2060px) {
+   //    font-size: .9vw;
+   // }
+   // @media (min-width: 1024px) and (max-width: 1360px) {
+   //    font-size: 1.2vw;
+   // }
+   // @media (min-width: 800px) and (max-width: 1024px) {
+   //    font-size: 1.9vw;
+   // }
+}
+
+.playButton {
+   display: inline;
+   position: absolute;
+   z-index: 5000;
+   top: 55%;
+   left: 75%;
+   transform: translate(-50%, -50%);
+
+   .icon {
+      padding: .5em;
+      height: 2em;
+      border-radius: 2em;
+      background-color: #a0a0a0;
+      transition-property: all;
+      transition-duration: 300ms;
+
+      &:hover {
+         height: 2.1em;
+         background-color: #dd9a99;
+         transition-timing-function: ease-in;
+      }
+   }
+}
+
+.clickable {
+   text-decoration: none;
+   color: #cfcfcf;
+   display: inline-block;
+   width: 10em;
+   height: 15em;
+   padding: 1em;
+   // margin: .5em .5em .5em .5em;
+   border-radius: inherit;
+   background-color: #30303040;
+   transition-property: all;
+   transition-duration: 250ms;
+
+   .imgContainer {
+      display: inline-block;
+      position: relative;
+      width: inherit;
+      height: 10em;
+      overflow: hidden;
+      border-radius: .5em;
+      transition-property: inherit;
+      transition-duration: inherit;
+
+      .image {
+         display: block;
+         width: inherit;
+      }
+   }
+
+   .textContentWrapper {
+      display: flex;
+      padding-left: 0.2em;
+      margin-top: 1em;
+      flex-direction: column;
+      align-items: start;
+
+      .titleBox {
+         display: inline-block;
+         width: inherit;
+         height: 1.5em;
+         color: #d1d1d1;
+         overflow: hidden;
+      }
+
+      .descriptionBox {
+         display: inline-block;
+         color: #a0a0a0;
+         font-size: .9em;
+      }
+   }
+
+}
+
+
+
+// .cardContainer {
+//    display: inline-block;
+//    position: relative;
+//    font-size: 1rem;
+
+//    margin: .5rem .5rem .5rem .5rem;
+//    border-radius: .7rem;
+
+
+//    &:hover>.clickable {
+//       cursor: pointer;
+//       transition-timing-function: ease-in;
+//       background-color: #30303080;
+
+//       .imgContainer {
+//          transition-timing-function: ease-in;
+//          box-shadow: 0em 0em .7rem 0 #222222;
+//       }
+//    }
+// }
+
+// .playButton {
+//    display: inline;
+//    position: absolute;
+//    z-index: 5000;
+//    top: 55%;
+//    left: 75%;
+//    transform: translate(-50%, -50%);
+
+//    .icon {
+//       padding: .5rem;
+//       height: 2rem;
+//       border-radius: 2rem;
+//       background-color: #a0a0a0;
+//       transition-property: all;
+//       transition-duration: 300ms;
+
+//       &:hover {
+//          height: 2.1rem;
+//          background-color: #dd9a99;
+//          transition-timing-function: ease-in;
+//       }
+//    }
+// }
+
+// .clickable {
+//    text-decoration: none;
+//    color: #cfcfcf;
+//    display: inline-block;
+//    width: 10rem;
+//    padding: 1rem 1rem 1rem 1rem;
+//    // margin: .5rem .5rem .5rem .5rem;
+//    border-radius: inherit;
+//    background-color: #30303040;
+//    transition-property: all;
+//    transition-duration: 250ms;
+
+//    .imgContainer {
+//       display: inline-block;
+//       position: relative;
+//       width: inherit;
+//       height: 10rem;
+//       overflow: hidden;
+//       border-radius: .5rem;
+//       transition-property: inherit;
+//       transition-duration: inherit;
+
+//       .image {
+//          display: block;
+//          width: inherit;
+//       }
+//    }
+
+//    .textContentWrapper {
+//       display: flex;
+//       padding-left: 0.2rem;
+//       margin-top: 1rem;
+//       margin-bottom: .4rem;
+//       flex-direction: column;
+//       align-items: start;
+//       // font-family: 'Roboto', sans-serif;
+
+//       .titleBox {
+//          display: inline-block;
+//          width: inherit;
+//          height: 1.5rem;
+//          color: #d1d1d1;
+//          overflow: hidden;
+//       }
+
+//       .descriptionBox {
+//          display: inline-block;
+//          color: #a0a0a0;
+//          font-size: .9rem;
+//       }
+//    }
+
+// }

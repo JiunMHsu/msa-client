@@ -6,18 +6,37 @@ Este repo es el cliente de una aplicación de streaming de musica, concretamente
 
 ## TODO
 
-- [x] Implementar custom hook para controlar la peticion y carga, para así poder abortar cuando sea necesario. (Esta copiado)
-- [ ] Habría que refactorizar Card y Playable Card, junto a los distintos estilos (por que se agregan funcionalidades de fold, estilos compactos, etc).
-- [ ] Refactorizar los componentes y sus propiedades, estandarizar las mismas lógicas y nombrado de variables (className, funciones de acción, onClick, etc...)
-- [ ] Hacer clean up del layuot, descartar contenedores innecesarios.
-- [ ] Hacer el PlayBar.
-- [ ] El tema de Card: Fixear strings largos, ajustar spacing de los textos.
-- [ ] Responsive para los Card implica que sea dinámico en tamaño y en cantidad mostrada.
-- [ ] Implementar autenticación y sus efectos (ver redux y context).
-- [ ] Configurar las rutas (ver si hace falta eso de public y private route).
-- [ ] Lazy loading? (ni idea como es esto todavía).
-- [ ] Implementar estilos responsive.
-- [ ] Implementar contenido (o estilos) por defecto y aminaciones de carga.
+- Generales:
+
+  - [X] Implementar custom hook para controlar la peticion y carga, para así poder abortar cuando sea necesario. (Esta copiado)
+  - [ ] Modificar los Card, considerar el plegable (ver si hacer un componente nuevo, adaptar el Card normal o modificacion en scss únicamente).
+  - [ ] Hacer clean up de todos los componentes, descartar contenedores innecesarios.
+  - [ ] Refactorizar los componentes y sus propiedades, estandarizar las mismas lógicas y nombrado de variables (className, funciones de acción, onClick, etc...)
+  - [ ] Lazy loading? (ni idea como es esto todavía).
+
+- Rutas y Vistas:
+
+  - [ ] Definir todas las vistas.
+  - [ ] Estructurar las Rutas.*Arcivo a parte* (Ver si implementar rutas protegidas).
+
+- Usuarios:
+
+  - [ ] Implmentar funcionalidad de SignUp y Login.
+  - [ ] Implementar Redux para manejo de usuario.
+  - [ ] Armar los formularios por componente Modal.
+  - [ ] Implementar autenticación por JWT.
+
+- Player:
+
+  - [ ] Implementar funcionalidad de streaming de audio *interactuando con el backend*.
+  - [ ] Implementar Componente PlayBar.
+  - [ ] Implementar funcionalidad de Cola.
+
+- Estilos (una mierda):
+  - [ ] Implementar estilos responsive.
+  - [ ] Ajustar los estilos de ContentRow.
+  - [ ] Implementar textos dinámicos (ajustar el largo de texto oculatando el exceso, reemplazando con '...').
+  - [ ] Implementar contenido (o estilos) por defecto y animaciones de carga.
 
 ## Routes
 

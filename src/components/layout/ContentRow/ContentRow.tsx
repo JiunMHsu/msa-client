@@ -1,33 +1,55 @@
+import { Link } from 'react-router-dom';
+
 import { Card } from '../..';
+import { Album, Artist, Playlist } from '../../../models';
+
 import styles from './ContentRow.module.scss';
 
-/**
- * El Content Row recibe un array de elementos a
- *
- */
-const ContentRow = () => {
-  //
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+interface ContentRowProps {
+  rowTitle: string;
+  contentRoute: string;
+  items: Artist | Album | Playlist;
+}
+
+interface Content {
+  itemUrl: string;
+  imageUrl: string;
+  title: string;
+  description: string;
+  isArtist: boolean;
+}
+
+const adaptContent = (content: Artist | Album | Playlist) => {
+  console.log(content);
+  return [] as Content[];
+};
+
+const ContentRow = ({ rowTitle, contentRoute, items }: ContentRowProps) => {
+  const content: Content[] = adaptContent(items);
 
   return (
     <div className={styles.rowWrapper}>
       <div className={styles.rowHeader}>
-        <h2 className={styles.title}>Recent Play</h2>
-        <a className={styles.accionButton} href="/library">
+        <h2 className={styles.title}>{rowTitle}</h2>
+        <Link className={styles.accionButton} to={`/show-all/${contentRoute}`}>
           Show All
-        </a>
+        </Link>
       </div>
 
       <div className={styles.contentContainer}>
-        {array.map((number, index) => (
-          <Card
-            imageUrl={''}
-            title={number.toString()}
-            description={'una descripcion'}
-            clickHandler={() => {}}
-            key={index}
-          />
-        ))}
+        {content.map(
+          ({ itemUrl, imageUrl, title, description, isArtist }, index) => (
+            <div className={styles.cardItem} key={index}>
+              <Card
+                itemUrl={itemUrl}
+                imageUrl={imageUrl}
+                mainTitle={title}
+                description={description}
+                isArtist={isArtist}
+              />
+            </div>
+          ),
+        )}
       </div>
     </div>
   );

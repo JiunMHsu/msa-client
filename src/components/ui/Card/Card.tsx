@@ -1,67 +1,50 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PlayButton } from '../..';
 
-import defaultStyle from './styles/Card.module.scss';
-import compactStyle from './styles/CardCompact.module.scss';
+import defaultStyle from './Card.module.scss';
+import compactStyle from './CardCompact.module.scss';
 
 type CardLayout = 'default' | 'compact';
 
 interface CardProps {
+  itemUrl: string;
   imageUrl: string;
-  title: string;
+  mainTitle: string;
   description?: string;
   isArtist?: boolean;
   layout?: CardLayout;
-  fold?: boolean;
-  onClick?: () => void;
+  className?: string;
+  //   fold?: boolean;
 }
 
-const setStyle = (layout: CardLayout | undefined) => {
-  switch (layout) {
-    case 'compact':
-      return compactStyle;
-
-    default:
-      return defaultStyle;
-  }
+const setStyle = (layout: CardLayout = 'default') => {
+  const layoutStyleSheetMatch = {
+    compact: compactStyle,
+    default: defaultStyle,
+  };
+  return layoutStyleSheetMatch[layout];
 };
 
-/**
- * En cuanto a layout de la carta, deberian haber:
- *
- * * Por defecto:
- *   Carta foto cuadrada, titulo principal, autores en descripción
- *   boton de play flotante sobre la img
- *
- * * Compacto (lo mismo que las dos anteriores)
- *   Varía únicamente en la animación del hover (véase spotify en la sección de librería),
- *   y en la descripción (va el tipo de album o playlist y el artista o creador)
- *
- * * Sencillo
- *   Layout alargado sin descripción,
- */
 const Card = ({
+  itemUrl,
   imageUrl,
-  title,
+  mainTitle,
   description,
-  isArtist = false,
+  isArtist,
   layout,
-  fold,
-  onClick,
+  className,
 }: CardProps) => {
-  // setear el estilo segun el valor style
   const styles = setStyle(layout);
   const [showButton, setShowButton] = useState(false);
 
-  const playButtonHandler = () => {
-    // deberia hacer lanzar el evento de encolar el tema, reproducir ...
+  const handlePlay = () => {
     console.log('playing');
   };
 
   return (
     <div
-      className={styles.cardContainer}
-      onClick={onClick}
+      className={`${styles.cardContainer} ${className} `}
       onMouseEnter={() => {
         setShowButton(true);
       }}
@@ -69,30 +52,25 @@ const Card = ({
         setShowButton(false);
       }}
     >
-      {/* nivel contenedor */}
       <PlayButton
-        // condicion: el mostrado es true y que no este doblado
-        show={showButton && !fold}
-        onClick={playButtonHandler}
+        show={showButton}
+        onClick={handlePlay}
         buttonStyle={styles.playButton}
         iconStyle={styles.icon}
       />
+      <Link to={itemUrl} className={styles.clickable}>
+        <div
+          className={styles.imgContainer}
+          style={isArtist ? { borderRadius: '5rem' } : {}}
+        >
+          <img src={imageUrl} alt="" className={styles.image}></img>
+        </div>
 
-      <div
-        className={styles.imgContainer}
-        style={isArtist ? { borderRadius: '5rem' } : {}}
-      >
-        {/* imagen */}
-        <img src={imageUrl} alt="" className={styles.image}></img>
-      </div>
-
-      {!fold && (
         <div className={styles.textContentWrapper}>
-          {/* nivel texto */}
-          <div className={styles.titleBox}>{title}</div>
+          <div className={styles.titleBox}>{mainTitle}</div>
           <div className={styles.descriptionBox}>{description}</div>
         </div>
-      )}
+      </Link>
     </div>
   );
 };

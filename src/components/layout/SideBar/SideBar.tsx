@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Card, Scrollable } from '../..';
 import { useEffect, useState } from 'react';
+
+import { Card_, Scrollable } from '../..';
 import { createAdaptedAlbumList } from '../../../adapters';
 import { fetchAlbumList } from '../../../servicies';
 import { Album } from '../../../models';
@@ -61,7 +62,7 @@ const SideBar = ({ openMenu }: SideBarProps) => {
 
       <Scrollable className={styles.scrollable}>
         {albums.map(({ title, coverArt, artists }, index) => (
-          <Card
+          <Card_
             imageUrl={coverArt}
             title={title}
             description={artists[0]}

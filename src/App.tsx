@@ -24,7 +24,7 @@ const App = () => {
   //   };
   // }, []);
 
-  const [openMenu, setOpenMenu] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <div className={styles.app}>

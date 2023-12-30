@@ -1,28 +1,36 @@
 .rowWrapper {
-   display: block;
-   overflow: hidden;
-}
-
-.rowHeader {
-   display: block;
-   align-items: baseline;
-}
-
-.title {
-   color: #1f1f1f;
-   display: inline;
-}
-
-.accionButton {
-   display: inline;
-   position: relative;
-   font-size: 90%;
-   padding-top: 0.1rem;
-   margin-right: 3rem;
-   float: right;
-}
-
-.contentContainer {
    display: flex;
+   flex-direction: column;
+   // overflow: hidden;
+
+   .rowHeader {
+      display: block;
+      align-items: baseline;
+
+      .title {
+         color: #cfcfcf;
+         display: inline;
+      }
+
+      .accionButton {
+         display: inline;
+         position: relative;
+         font-size: 90%;
+         padding-top: 0.1rem;
+         margin-right: 3rem;
+         float: right;
+      }
+   }
+
+   .contentContainer {
+      display: inline-flex;
+      flex-wrap: wrap;
+      height: 2;
+      // align-items: start;
+
+      .cardItem {
+         flex-grow: 2;
+      }
+   }
 
 }

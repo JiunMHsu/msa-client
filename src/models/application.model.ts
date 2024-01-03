@@ -9,7 +9,10 @@ export interface Artist {
   about: string;
 }
 
-export interface Track {}
+export interface Track {
+  title: string;
+  src: string; // endpoint
+}
 
 export type DiskType = 'Album' | 'EP' | 'Single' | 'Mixtape';
 

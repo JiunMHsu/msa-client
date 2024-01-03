@@ -11,6 +11,7 @@ import TextBox from './ui/TextBox/TextBox';
 import SideBar from './layout/SideBar/SideBar';
 import TopBar from './layout/TopBar/TopBar';
 import ContentRow from './layout/ContentRow/ContentRow';
+import PlayBar from './layout/PlayBar/PlayBar';
 
 export {
   Button,
@@ -23,4 +24,5 @@ export {
   TopBar,
   TextBox,
   ContentRow,
+  PlayBar,
 };

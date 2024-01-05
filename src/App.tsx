@@ -1,29 +1,10 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
 import { SideBar, TopBar, Scrollable, PlayBar } from './components';
-import { Explore, Home, Library } from './views';
-
+import { routes } from './data';
 import styles from './App.module.scss';
 
 const App = () => {
-  // const [windowSize, setWindowSize] = useState([
-  //   window.innerWidth,
-  //   window.innerHeight,
-  // ]);
-
-  // useEffect(() => {
-  //   const handleWindowResize = () => {
-  //     setWindowSize([window.innerWidth, window.innerHeight]);
-  //   };
-
-  //   window.addEventListener('resize', handleWindowResize);
-
-  //   return () => {
-  //     window.removeEventListener('resize', handleWindowResize);
-  //   };
-  // }, []);
-
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
@@ -35,9 +16,9 @@ const App = () => {
         <Scrollable className={styles.mainFrame}>
           <Routes>
             {/* Main Section */}
-            <Route path="/" element={<Home />} />
-            <Route path="/explore" element={<Explore />} />
-            <Route path="/library" element={<Library />} />
+            {routes.map(({ path, Element }) => (
+              <Route key={path} path={path} element={<Element />} />
+            ))}
           </Routes>
         </Scrollable>
 
@@ -48,7 +29,7 @@ const App = () => {
         playBarStyles={styles.playBar}
         track={{
           title: '',
-          src: 'http://127.0.0.1:5000/api/track/102a79ab-9cb3-42d1-8154-b3e445ad2ae4/play',
+          src: '',
         }}
       />
 

@@ -16,8 +16,8 @@ Este repo es el cliente de una aplicación de streaming de musica, concretamente
 
 - Rutas y Vistas:
 
-  - [ ] Definir todas las vistas.
-  - [ ] Estructurar las Rutas.*Arcivo a parte* (Ver si implementar rutas protegidas).
+  - [X] Definir todas las vistas.
+  - [X] Estructurar las Rutas.
 
 - Usuarios:
 
@@ -38,18 +38,6 @@ Este repo es el cliente de una aplicación de streaming de musica, concretamente
   - [ ] Implementar textos dinámicos (ajustar el largo de texto oculatando el exceso, reemplazando con '...').
   - [ ] Implementar contenido (o estilos) por defecto y animaciones de carga.
 
-## Routes
+## Para tener en cuenta
 
-`/`
-
-`/explore`
-
-`/library`
-
-`/album/:id`
-
-`/playlist/:id`
-
-`/user`
-
-`/artist`
+El ContentRow esta hecho un asco por el tema de adaptar tres posibilidades de contenido (Artist, Album, Playlit) para el display. Habría que pensar otra solución.

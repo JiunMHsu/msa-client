@@ -1,11 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-
 import { Card_, Scrollable } from '../..';
-import { createAdaptedAlbumList } from '../../../adapters';
-import { fetchAlbumList } from '../../../servicies';
-import { Album } from '../../../models';
-
 import styles from './SideBar.module.scss';
 
 interface SideBarProps {
@@ -31,20 +25,20 @@ const menuOptions = [
 ];
 
 const SideBar = ({ openMenu }: SideBarProps) => {
-  const initialAlbums: Album[] = [];
-  const [albums, setAlbums] = useState(initialAlbums);
+  // const initialAlbums: Album[] = [];
+  // const [albums, setAlbums] = useState(initialAlbums);
 
   //----------------------------------------------------------------------------------
-  const fetchAlbums = async () => {
-    const { data } = await fetchAlbumList([
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-    ]).call;
-    setAlbums(createAdaptedAlbumList(data));
-  };
+  // const fetchAlbums = async () => {
+  //   const { data } = await fetchAlbumList([
+  //     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  //   ]).call;
+  //   setAlbums(createAdaptedAlbumList(data));
+  // };
 
-  useEffect(() => {
-    fetchAlbums();
-  }, []);
+  // useEffect(() => {
+  //   fetchAlbums();
+  // }, []);
   //----------------------------------------------------------------------------------
 
   return (
@@ -61,7 +55,7 @@ const SideBar = ({ openMenu }: SideBarProps) => {
       <div className={styles.divider} />
 
       <Scrollable className={styles.scrollable}>
-        {albums.map(({ title, coverArt, artists }, index) => (
+        {[].map(({ title, coverArt, artists }, index) => (
           <Card_
             imageUrl={coverArt}
             title={title}

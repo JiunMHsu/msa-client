@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PlayButton } from '../..';
+import { Content } from '../../../models';
 
 import defaultStyle from './Card.module.scss';
 import compactStyle from './CardCompact.module.scss';
@@ -8,11 +9,7 @@ import compactStyle from './CardCompact.module.scss';
 type CardLayout = 'default' | 'compact';
 
 interface CardProps {
-  itemUrl: string;
-  imageUrl: string;
-  mainTitle: string;
-  description?: string;
-  isArtist?: boolean;
+  content: Content;
   layout?: CardLayout;
   className?: string;
   //   fold?: boolean;
@@ -26,19 +23,15 @@ const setStyle = (layout: CardLayout = 'default') => {
   return layoutStyleSheetMatch[layout];
 };
 
-const Card = ({
-  itemUrl,
-  imageUrl,
-  mainTitle,
-  description,
-  isArtist,
-  layout,
-  className,
-}: CardProps) => {
+const Card = ({ content, layout, className }: CardProps) => {
   const styles = setStyle(layout);
+  const { id, title, description, imageUrl, type } = content;
+
   const [showButton, setShowButton] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlay = () => {
+    setIsPlaying(previous => !previous);
     console.log('playing');
   };
 
@@ -56,18 +49,19 @@ const Card = ({
         show={showButton}
         onClick={handlePlay}
         buttonStyle={styles.playButton}
+        isPlaying={isPlaying}
         iconStyle={styles.icon}
       />
-      <Link to={itemUrl} className={styles.clickable}>
+      <Link to={`/${type}/${id}`} className={styles.clickable}>
         <div
           className={styles.imgContainer}
-          style={isArtist ? { borderRadius: '5rem' } : {}}
+          style={type == 'artist' ? { borderRadius: '5rem' } : {}}
         >
-          <img src={imageUrl} alt="" className={styles.image}></img>
+          <img src={`${imageUrl}`} alt="" className={styles.image}></img>
         </div>
 
         <div className={styles.textContentWrapper}>
-          <div className={styles.titleBox}>{mainTitle}</div>
+          <div className={styles.titleBox}>{title}</div>
           <div className={styles.descriptionBox}>{description}</div>
         </div>
       </Link>

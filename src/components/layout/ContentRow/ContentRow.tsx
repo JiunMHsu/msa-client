@@ -1,31 +1,88 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { Card } from '../..';
-import { Album, Artist, Playlist } from '../../../models';
-
+import { Album, Artist, Content, ContentType, Playlist } from '../../../models';
+import { fetchContent } from '../../../servicies';
+import { endpoints } from '../../../data';
 import styles from './ContentRow.module.scss';
 
 interface ContentRowProps {
   rowTitle: string;
   contentRoute: string;
-  items: Artist | Album | Playlist;
+  items: {
+    id: string;
+    type: ContentType;
+  }[];
 }
 
-interface Content {
-  itemUrl: string;
-  imageUrl: string;
-  title: string;
-  description: string;
-  isArtist: boolean;
-}
+const isArtist = (value: any): value is Artist => {
+  return value.artistId !== undefined;
+};
+
+const isAlbum = (value: any): value is Album => {
+  return value.albumId !== undefined;
+};
+
+const isPlaylist = (value: any): value is Playlist => {
+  return value.playlistId !== undefined;
+};
 
 const adaptContent = (content: Artist | Album | Playlist) => {
-  console.log(content);
-  return [] as Content[];
+  const c = {
+    id: '',
+    title: '',
+    description: '',
+    imageUrl: `${endpoints.getImage}`,
+    type: 'album',
+  } as Content;
+
+  if (isArtist(content)) {
+    c.id = content.artistId;
+    c.title = content.artistName;
+    c.description = 'Artist';
+    c.imageUrl += content.profilePhoto;
+    c.type = 'artist';
+  }
+
+  if (isAlbum(content)) {
+    c.id = content.albumId;
+    c.title = content.title;
+    c.description = content.artist;
+    c.imageUrl += content.coverArt;
+    c.type = 'album';
+  }
+
+  if (isPlaylist(content)) {
+    c.id = content.playlistId;
+    c.title = content.title;
+    c.description = content.createdBy;
+    c.imageUrl += content.coverArt;
+    c.type = 'playlist';
+  }
+  return c;
 };
 
 const ContentRow = ({ rowTitle, contentRoute, items }: ContentRowProps) => {
-  const content: Content[] = adaptContent(items);
+  const [content, setContent] = useState<Content[]>([]);
+
+  const getContent = async () => {
+    const calls = items.map(({ id, type }) => fetchContent(id, type));
+
+    const contentPromises = calls.map(async ({ call }) => {
+      const { data } = await call;
+      return adaptContent(data);
+    });
+
+    const contentList = await Promise.all(contentPromises);
+    setContent(contentList)
+  };
+
+  useEffect(() => {
+    getContent();
+    return () => {
+      setContent([]);
+    };
+  }, []); // se podria poner alguna dependencia (por ejemplo los recien escuchados)
 
   return (
     <div className={styles.rowWrapper}>
@@ -37,19 +94,9 @@ const ContentRow = ({ rowTitle, contentRoute, items }: ContentRowProps) => {
       </div>
 
       <div className={styles.contentContainer}>
-        {content.map(
-          ({ itemUrl, imageUrl, title, description, isArtist }, index) => (
-            <div className={styles.cardItem} key={index}>
-              <Card
-                itemUrl={itemUrl}
-                imageUrl={imageUrl}
-                mainTitle={title}
-                description={description}
-                isArtist={isArtist}
-              />
-            </div>
-          ),
-        )}
+        {content.map(item => (
+          <Card key={item.id} content={item} />
+        ))}
       </div>
     </div>
   );

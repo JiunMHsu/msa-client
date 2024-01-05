@@ -5,6 +5,7 @@ interface PlayButtonProps {
   show: boolean;
   buttonStyle?: string;
   iconStyle?: string;
+  isPlaying?: boolean;
   onClick: () => void;
 }
 
@@ -12,6 +13,7 @@ const PlayButton = ({
   show,
   buttonStyle,
   iconStyle,
+  isPlaying,
   onClick,
 }: PlayButtonProps) => {
   return (
@@ -22,7 +24,11 @@ const PlayButton = ({
           onClick={onClick}
         >
           <img
-            src="icons/play_arrow_FILL0_wght200_GRAD0_opsz24.svg"
+            src={
+              isPlaying
+                ? 'icons/pause_FILL0_wght200_GRAD0_opsz24.svg'
+                : 'icons/play_arrow_FILL0_wght200_GRAD0_opsz24.svg'
+            }
             alt=""
             className={`${styles.icon} ${iconStyle}`}
           />

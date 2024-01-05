@@ -1,39 +1,58 @@
 export interface Artist {
   artistId: string;
-  name: string;
-  isVerified: boolean;
+  artistName: string;
+  verified: boolean;
   followers: number;
   monthlyListeners: number;
   profilePhoto: string;
-  profileBanner?: string;
-  about: string;
 }
 
 export interface Track {
+  trackId: string;
+  albumId: string;
   title: string;
-  src: string; // endpoint
+  discNumber: number;
+  trackNumber: number;
+  duration: string;
+  isExplicit: boolean;
+  plays: number;
+  sourceFile: string;
 }
 
 export type DiskType = 'Album' | 'EP' | 'Single' | 'Mixtape';
 
 export interface Album {
   albumId: string;
-  discType: DiskType;
   title: string;
+  discType: DiskType;
+  artist: string;
   coverArt: string;
-  artists: string[]; // id
-  tracks: Track[];
   label: string;
-  release: Date; // XX-XX-XX
-  duration: Date; // miliseconds
+  releaseDate: string;
+  duration: string;
 }
 
-export interface Playlist {}
+export interface Playlist {
+  playlistId: string;
+  title: string;
+  coverArt: string;
+  createdBy: string; // id o nombre?
+}
 
 export interface User {
+  userId: string;
   name: string;
+  email: string;
+  password: string;
   profilePhoto: string;
-  following: string[];
-  playlists: string[];
-  savedAlbums: string[];
+}
+
+export type ContentType = 'artist' | 'album' | 'playlist';
+
+export interface Content {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  type: ContentType;
 }

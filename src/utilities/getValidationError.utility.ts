@@ -2,5 +2,6 @@ export const getValidationError = (errorCode: string) => {
   const errorMessageByCode = {
     ERR_NETWORK: 'error de red',
   };
-  return errorCode;
+  return 'unkown error';
+  // return errorMessageByCode[errorCode] ?? 'unkown error';
 };

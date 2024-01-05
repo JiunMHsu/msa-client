@@ -15,9 +15,9 @@ interface PlayBarProps {
 const PlayBar = ({ playBarStyles, track }: PlayBarProps) => {
   return (
     <div className={`${playBarStyles}`}>
-      <video controls autoPlay={true}>
-        <source src={track.src} />
-      </video>
+      <audio controls autoPlay={true}>
+        <source src={track.src} type="audio/flac"/>
+      </audio>
     </div>
   );
 };

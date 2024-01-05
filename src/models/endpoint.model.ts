@@ -1,26 +1,39 @@
-/**
- * UNICAMENTE PARA TESTEAR CON LO DE RICK AND MORTY
- */
-
-interface CharacterLocation {
-  name: string;
-  url: string;
+export interface EndpointArtist {
+  artistId: string;
+  artistName: string;
+  verified: boolean;
+  followers: number;
+  monthlyListeners: number;
+  profilePhoto: string;
+}
+export interface EndpointAlbum {
+  albumId: string;
+  title: string;
+  discType: string;
+  coverArt: string;
+  label: string;
+  releaseDate: string;
+  duration: string;
 }
 
-interface ResourceBase {
-  id: number;
-  name: string;
-  url: string;
-  created: string;
+export interface EndpointPlaylist {}
+
+export interface EndpointTrack {
+  trackId: string;
+  albumId: string;
+  title: string;
+  discNumber: number;
+  trackNumber: number;
+  duration: string;
+  isExplicit: boolean;
+  plays: number;
+  sourceFile: string;
 }
 
-export interface EndpointAlbum extends ResourceBase {
-  status: 'Dead' | 'Alive' | 'unknown';
-  species: string;
-  type: string;
-  gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
-  origin: CharacterLocation;
-  location: CharacterLocation;
-  image: string;
-  episode: string[];
+export interface EndpointUser {
+  userId: string;
+  name: string;
+  email: string;
+  password: string;
+  profilePhoto: string;
 }

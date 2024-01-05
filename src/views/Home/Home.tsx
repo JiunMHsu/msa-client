@@ -1,46 +1,44 @@
-import { useEffect, useState } from 'react';
-
-import { ContentRow, Card } from '../../components';
-import { createAdaptedAlbumList } from '../../adapters';
-import { fetchAlbumList } from '../../servicies';
-import { Album } from '../../models';
+import { ContentRow } from '../../components';
+import { ContentType } from '../../models';
 
 import styles from './Home.module.scss';
 
 const Home = () => {
-  const [albums, setAlbums] = useState<Album[]>([]);
-
-  const fetchAlbums = async () => {
-    const { data } = await fetchAlbumList([
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-    ]).call;
-    setAlbums(createAdaptedAlbumList(data));
-  };
-
-  useEffect(() => {
-    fetchAlbums();
-  }, []);
+  const initial: { id: string; type: ContentType }[] = [
+    {
+      id: '9d220c9b-d1b8-41a7-8286-8a1c5b0936f5',
+      type: 'artist',
+    },
+    {
+      id: '5d66351d-addd-49ac-84a9-dbde46ab5384',
+      type: 'album',
+    },
+    {
+      id: '8b65089c-2a07-47ad-a5e3-9bf8bd612a4e',
+      type: 'artist',
+    },
+    {
+      id: '07f261b7-8c5f-4a53-aaed-b269e64f03c1',
+      type: 'album',
+    },
+    {
+      id: 'e774ebae-f170-4e55-9d06-8269d4b6d1a4',
+      type: 'album',
+    },
+    {
+      id: '88e0b6ea-6203-4efd-a4ce-7900819b7044',
+      type: 'album',
+    },
+  ];
 
   return (
     <div className={styles.home}>
-      <h2>Good Morning</h2>
-      <Card
-        itemUrl={'/library'}
-        imageUrl={'album-cover/iu-lilac.jpg'}
-        mainTitle={`IU 5th Album 'LILAC'`}
-        description={'IU'}
+      <ContentRow
+        rowTitle="Good Morning"
+        contentRoute="/ecommended"
+        items={initial}
       />
-      <ContentRow rowTitle="Recent Play" contentRoute="/asldk" items={albums} />
-      {albums.map(({ albumId, title, coverArt, artists }, index) => (
-        <Card
-          itemUrl={`/${albumId}`}
-          imageUrl={coverArt}
-          mainTitle={title}
-          description={artists[0]}
-          isArtist={artists[0] === 'Female'}
-          key={index}
-        />
-      ))}
+      <div className={styles.fill}></div>
     </div>
   );
 };

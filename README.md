@@ -40,4 +40,4 @@ Este repo es el cliente de una aplicación de streaming de musica, concretamente
 
 ## Para tener en cuenta
 
-El ContentRow esta hecho un asco por el tema de adaptar tres posibilidades de contenido (Artist, Album, Playlit) para el display. Habría que pensar otra solución.
+El ContentRow esta hecho un asco por el tema de adaptar tres posibilidades de contenido (Artist, Album, Playlist) para el display de una Card. Habría que pensar otra solución.
